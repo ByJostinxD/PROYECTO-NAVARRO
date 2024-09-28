@@ -1,0 +1,20 @@
+#define length(v,tipo) (sizeof(v) / sizeof(tipo))
+#define LED_1 5 // Primer LED
+#define LED_2 6 // Segundo LED
+
+int secuencia1[] = {1, 0, 0, 1, 1, 0, 1, 1};
+int secuencia2[] = {0, 1, 0, 1, 0, 0, 1, 0};
+
+void setup() 
+{
+    pinMode(LED_1, OUTPUT);
+    pinMode(LED_2, OUTPUT);
+}
+
+void loop() {
+    for (int i = 0; i < length(secuencia1, int); i++) {
+        digitalWrite(LED_1, secuencia1[i]);
+        digitalWrite(LED_2, secuencia2[i]);
+        delay(500);
+    }
+}

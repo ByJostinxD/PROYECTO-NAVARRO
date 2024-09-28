@@ -1,0 +1,30 @@
+#define length(v,tipo) (sizeof(v) / sizeof(tipo))
+
+#define LED_1 2 
+#define LED_2 3 
+#define LED_3 4
+#define LED_4 5 
+#define LED_5 6 
+
+int pinesLED[] = {LED_1, LED_2, LED_3, LED_4, LED_5};
+
+void setup() 
+{
+    for (int i = 0; i < length(pinesLED, int); i++) {
+        pinMode(pinesLED[i], OUTPUT);
+    }
+}
+
+void loop() {
+    for (int i = 0; i < length(pinesLED, int); i++) {
+        digitalWrite(pinesLED[i], HIGH);
+        delay(200);
+        digitalWrite(pinesLED[i], LOW);
+    }
+
+    for (int i = length(pinesLED, int) - 1; i >= 0; i--) {
+        digitalWrite(pinesLED[i], HIGH);
+        delay(200);
+        digitalWrite(pinesLED[i], LOW);
+    }
+} 

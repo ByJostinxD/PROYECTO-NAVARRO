@@ -1,0 +1,23 @@
+#define length(v,tipo) (sizeof(v) / sizeof(tipo))
+
+int numero[] = {2, 6, 10, 11};
+
+void setup() {
+    Serial.begin(9600);
+}
+
+void loop() {
+    for (int i = 0; i < length(numero, int); i++) {
+        Serial.print(" Estos son los multiplos de ");
+        Serial.print(numero[i]);
+        Serial.println(":");
+
+        for (int j = 1; j <= 5; j++) {
+            Serial.print(numero[i] * j);
+            Serial.print(" ");
+        }
+        Serial.println();
+    }
+
+    delay(10000); 
+}

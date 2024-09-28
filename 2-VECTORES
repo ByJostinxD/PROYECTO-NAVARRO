@@ -1,0 +1,30 @@
+#define length(v,tipo) (sizeof(v) / sizeof(tipo))
+
+void setup() 
+{
+    Serial.begin(9600);
+}
+
+void loop() {
+    int numero[] = {10, 4, 2};
+    int cantidad = length(numero, int);
+
+    for (int i = 0; i < cantidad - 1; i++) {
+        for (int j = 0; j < cantidad - i - 1; j++) {
+            if (numero[j] > numero[j + 1]) {
+                int temp = numero[j];
+                numero[j] = numero[j + 1];
+                numero[j + 1] = temp;
+            }
+        }
+    }
+
+    Serial.print("Este es el vector ordenado: ");
+    for (int i = 0; i < cantidad; i++) {
+        Serial.print(numero[i]);
+        Serial.print(" ");
+    }
+    Serial.println();
+
+    delay(2000);
+}

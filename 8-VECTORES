@@ -1,0 +1,49 @@
+#define LED 5
+#define BUTTON 7
+
+const int maxDatos = 5;
+int datos[maxDatos];
+int posicionVEC = 0;
+
+void setup() {
+  pinMode(LED, OUTPUT);
+  pinMode(BUTTON, INPUT_PULLUP);
+  Serial.begin(9600);
+}
+
+void loop() {
+  if (posicionVEC < maxDatos) {
+    digitalWrite(LED, HIGH);
+    delay(500);
+
+    while (digitalRead(BUTTON) == HIGH) {
+    }
+
+    digitalWrite(LED, LOW);
+    delay(500);
+
+    if (digitalRead(BUTTON) == LOW) {
+      datos[posicionVEC] = 1;
+    } else {
+      datos[posicionVEC] = 0;
+    }
+    posicionVEC++;
+
+    while (digitalRead(BUTTON) == LOW) {
+    }
+
+    delay(1000);
+  } else {
+    Serial.print("Secuencia: ");
+    for (int i = 0; i < maxDatos; i++) {
+      Serial.print(datos[i]);
+      if (i < maxDatos - 1) {
+        Serial.print(", ");
+      }
+    }
+    Serial.println();
+
+    posicionVEC = 0;
+    delay(2000);
+  }
+}
