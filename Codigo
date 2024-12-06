@@ -1,0 +1,19 @@
+Estas son nuestras conexiones:
+
+servo1 lo conectamos al pin 7
+
+servo2 lo conectamos al pin 8
+
+servo3 lo conectamos al pin 9
+
+servo4 lo conectamos al pin 10
+
+servo5 lo conectamos al pin 11
+
+servo6 lo conectamos al pin 12
+
+Joystick1 lo conectamos al A0 y A1
+
+Joystick2 lo conectamos al A2 y A3
+
+Joystick3 lo conectamos al A4 y al pin 13, lo conectamos a un pin ya que lo que usaremos es el presionarlo que es como un boton.
